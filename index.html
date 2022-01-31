@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="onLoad()">
+    <h1 style="margin-top: 1cm; font-size: 40px; ;">Rock Paper Scissors</h1>
+    <div id="player1">
+      <h2>Player 1</h2>
+      <button id="player1R" onclick="onPl1ClickRock()">🪨</button>
+      <button id="player1P" onclick="onPl1ClickPaper()">📃</button>
+      <button id="player1S" onclick="onPl1ClickScissors()">✂️</button>
+      <p id="playerOnePoint">Score 0</p>
+    </div>
+    <div id="player2">
+      <h2>Player 2</h2>
+      <button disabled id="player2R" onclick="onPl2ClickRock()">🪨</button>
+      <button disabled id="player2P" onclick="onPl2ClickPaper()">📃</button>
+      <button disabled id="player2S" onclick="onPl2ClickScissors()">✂️</button>
+      <p id="playerTwoPoint">Score 0</p>
+    </div>
+
+    <div id="menu">
+      <button id="start" onclick="start()">Start Playing</button>
+      <br />
+      <br />
+      <button id="stop" style="visibility: hidden" onclick="stop()">
+        Stop Playing
+      </button>
+      <p id="vs"></p>
+      <p id="result"></p>
+      <p id="reset"></p>
+    </div>
+  </body>
+</html>
