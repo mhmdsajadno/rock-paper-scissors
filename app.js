@@ -177,9 +177,9 @@ const compare = function () {
   //alert("Player 2, close youe eyes!!!")
 
   document.getElementById("playerOnePoint").innerHTML =
-    "Score " + playerOnePoint;
+    "Score: " + playerOnePoint;
   document.getElementById("playerTwoPoint").innerHTML =
-    "Score " + playerTwoPoint;
+    "Score: " + playerTwoPoint;
 
   document.getElementById("player1R").disabled = false;
   document.getElementById("player1P").disabled = false;
