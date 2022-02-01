@@ -19,6 +19,7 @@ const onLoad = () => {
   document.getElementById("player2S").disabled = true;
   document.getElementById("player1").style.display = "none";
   document.getElementById("player2").style.display = "none";
+  document.getElementById("pointWho").style.visibility = "hidden";
   document.body.classList.add('loaded')
 };
 
@@ -31,7 +32,7 @@ const start = () => {
   document.getElementById("player2S").disabled = true;
   document.getElementById("start").style.visibility = "hidden";
   document.getElementById("stop").style.visibility = "visible";
-
+  document.getElementById("pointWho").style.visibility = "visible";
   document.getElementById("player1").style.display = "inline-block";
   document.getElementById("player2").style.display = "inline-block";
 };
@@ -45,6 +46,7 @@ const stop = () => {
   document.getElementById("player2S").disabled = true;
   document.getElementById("start").style.visibility = "hidden";
   document.getElementById("stop").style.visibility = "hidden";
+  document.getElementById("pointWho").style.visibility = "hidden";
   console.log(playerOnePoint + " VS " + playerTwoPoint);
   if (playerOnePoint > playerTwoPoint) {
     //alert ("Player One won!")
@@ -97,7 +99,7 @@ const onPl1ClickScissors = function () {
   disOnP1Click();
 };
 
-var onPl2ClickRock = function () {
+const onPl2ClickRock = function () {
   playerTwo = choices[0];
   console.log("pl2: " + playerTwo);
   disOnP2Click();
@@ -121,13 +123,16 @@ const compare = function () {
   if (playerOne == choices[0]) {
     if (playerTwo == choices[0]) {
       result = "draw";
+      document.getElementById("pointWho").innerHTML = "Noone!"
       console.log(result);
     } else if (playerTwo == choices[1]) {
       result = "Player 2 won";
+      document.getElementById("pointWho").innerHTML = "Player 2 got the point!"
       playerTwoPoint += 1;
       console.log(result);
     } else if (playerTwo == choices[2]) {
       result = "Player 1 won";
+      document.getElementById("pointWho").innerHTML = "Player 1 got the point!"
       playerOnePoint += 1;
       console.log(result);
     }
@@ -136,13 +141,16 @@ const compare = function () {
   if (playerOne == choices[1]) {
     if (playerTwo == choices[0]) {
       result = "Player 1 won";
+      document.getElementById("pointWho").innerHTML = "Player 1 got the point!"
       playerOnePoint += 1;
       console.log(result);
     } else if (playerTwo == choices[1]) {
-      result = "draw";
+      result = "Draw";
+      document.getElementById("pointWho").innerHTML = "Noone!"
       console.log(result);
     } else if (playerTwo == choices[2]) {
       result = "Player 2 won";
+      document.getElementById("pointWho").innerHTML = "Player 2 got the point!"
       playerTwoPoint += 1;
       console.log(result);
     }
@@ -151,14 +159,17 @@ const compare = function () {
   if (playerOne == choices[2]) {
     if (playerTwo == choices[0]) {
       result = "Player 2 won";
+      document.getElementById("pointWho").innerHTML = "Player 2 got the point!"
       playerTwoPoint += 1;
       console.log(result);
     } else if (playerTwo == choices[1]) {
       result = "Player 1 won";
+      document.getElementById("pointWho").innerHTML = "Player 1 got the point!"
       playerOnePoint += 1;
       console.log(result);
     } else if (playerTwo == choices[2]) {
       result = "Draw";
+      document.getElementById("pointWho").innerHTML = "Noone!"
       console.log(result);
     }
   }
